@@ -16,19 +16,66 @@
           </div>
 
           <div class="card-body">
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <!-- 1st row with card number, cvc and amount -->
+            <div class="row mb-3">
+              <div class="col-5">
+                <label for="cardNumber" class="form-label">Card #</label>
+                <input type="text" minlength="16" maxlength="16" class="form-control" id="cardNumber" placeholder="XXXXXXXXXXXXXXXX" aria-describedby="cardNumber" required>
               </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+              <div class="col">
+                <label for="cvc" class="form-label">CVC #</label>
+                <input type="number"  minlength="4" maxlength="4" class="form-control" id="cvc" placeholder="0000" aria-describedby="cvc" required>
               </div>
-              <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              <div class="col">
+                <label for="amount" class="form-label">Amount</label>
+                <input type="number" class="form-control" id="amount" placeholder="Amount" aria-describedby="amount" required>
               </div>
+            </div>
+            <!-- 2nd row with first name and last name  -->
+            <div class="row mb-3">
+              <div class="col">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" maxlength="25" class="form-control" id="firstName" aria-describedby="firstName" required>
+              </div>
+              <div class="col">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" maxlength="25" class="form-control" id="lastName" aria-describedby="lastName" required>
+              </div>
+            </div>
+            <!-- 3rd row with City, State and Postal Code  -->
+            <div class="row mb-3">
+              <div class="col-6">
+                <label for="city" class="form-label">City</label>
+                <input type="text" maxlength="25" class="form-control" id="city" aria-describedby="city" required>
+              </div>
+              <div class="col">
+                <label for="state" class="form-label">State</label>
+                <select class="form-control" name="state" id="state" aria-placeholder="Pick a state">
+                  <option value="New York">New York</option>
+                </select>
+              </div>
+              <div class="col">
+                <label for="postalCode" class="form-label">Postal Code</label>
+                <input type="text" maxlength="25" class="form-control" id="postalCode" aria-describedby="postalCode" required>
+              </div>
+            </div>            
+            <!-- 4th row with payment type and comments -->
+            <div class="row mb-3">
+              <div class="col-6">
+                <label for="paymentOptions" class="form-label">We accept:</label>
+                <div id="paymentOptions" class="form-check bg-dark">
+                  <input type="radio" name="payment" id="mastercard">
+                  <input type="radio" name="payment" id="visa">
+                  <input type="radio" name="payment" id="payPal">
+                  <input type="radio" name="payment" id="americanExp">
+                </div>
+              </div>
+              <div class="col">
+                <label for="message" class="form-label">Message</label>
+                <textarea name="message" id="message" class="form-control" rows="3"></textarea>
+                <small id="helpMessage" class="form-text text-muted">Add any notes here.</small>
+              </div>
+            </div>
           </div>
 
           <div class="card-footer d-flex justify-content-end gap-2">
